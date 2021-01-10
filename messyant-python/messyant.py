@@ -1,5 +1,5 @@
 import os
-import pyodbc
+import pypyodbc
 from flask import Flask, request
 from flask_restful import Resource, Api
 
@@ -7,7 +7,7 @@ app = Flask(__name__)
 api = Api(app)
 
 def sql_conn():
-    conn = pyodbc.connect("Driver={ODBC Driver 17 for SQL Server};"
+    conn = pypyodbc.connect("Driver={ODBC Driver 17 for SQL Server};"
                           "Server="+ os.environ['DATABASE_ENDPOINT'] + ";"
                           "Database=" + os.environ['DATABASE_NAME'] + ";"
                           "uid=" + os.environ['DATABASE_ENDPOINT_USERNAME'] +
