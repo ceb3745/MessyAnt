@@ -7,8 +7,8 @@ api = Api(app)
 
 def sql_conn():
     conn = pyodbc.connect("Driver={ODBC Driver 17 for SQL Server};"
-                          "Server=;"
-                          "Database=" + os.environ['DATABASE_ENDPOINT'] + ";"
+                          "Server="+ os.environ['DATABASE_ENDPOINT'] + ";"
+                          "Database=" + os.environ['DATABASE_NAME'] + ";"
                           "uid=" + os.environ['DATABASE_ENDPOINT_USERNAME'] +
                           ";pwd=" + os.environ['DATABASE_ENDPOINT_PASSWORD'] + ";")
     return conn.cursor()
