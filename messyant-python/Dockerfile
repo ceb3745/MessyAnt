@@ -1,5 +1,5 @@
 # parent image
-FROM python:3.7-slim
+FROM tiangolo/uwsgi-nginx-flask:python3.6
 
 # install FreeTDS and dependencies
 RUN apt-get update \
