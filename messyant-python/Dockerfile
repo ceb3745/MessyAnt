@@ -2,6 +2,10 @@ FROM python:3
 ADD messyant.py /
 RUN pip install flask
 RUN pip install flask_restful
-RUN pip install pypyodbc==1.3.2
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    unixodbc-dev \
+    unixodbc \
+    libpq-dev
+RUN pip install pyodbc
 EXPOSE 8080
 CMD [ "python", "./messyant.py"]
